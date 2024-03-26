@@ -1,9 +1,9 @@
-package com.pleahmacaka.examplemod
+package com.gallichron.newagealexscaves
 
-import com.pleahmacaka.examplemod.init.BlockItemRegistry
-import com.pleahmacaka.examplemod.init.BlockRegistry
-import com.pleahmacaka.examplemod.init.ItemRegistry
-import com.pleahmacaka.examplemod.keybind.KeyBindHandler.registerKeybindings
+import com.gallichron.newagealexscaves.init.BlockItemRegistry
+import com.gallichron.newagealexscaves.init.BlockRegistry
+import com.gallichron.newagealexscaves.init.ItemRegistry
+import com.gallichron.newagealexscaves.keybind.KeyBindHandler.registerKeybindings
 import net.minecraftforge.fml.common.Mod
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent
 import org.apache.logging.log4j.Level
@@ -11,12 +11,12 @@ import org.apache.logging.log4j.LogManager
 import org.apache.logging.log4j.Logger
 import thedarkcolour.kotlinforforge.forge.MOD_BUS
 
-const val MODID = "examplemod"
+const val MODID = "newagealexscaves"
 
 @Mod(MODID)
-object ExampleMod {
+object newagealexscaves {
 
-    val LOGGER: Logger = LogManager.getLogger("examplemod")
+    val LOGGER: Logger = LogManager.getLogger("newagealexscaves")
 
     init {
         LOGGER.log(Level.INFO, "$MODID has started!")
@@ -30,7 +30,7 @@ object ExampleMod {
 
     @Suppress("UNUSED_PARAMETER")
     private fun onClientSetup(event: FMLClientSetupEvent) {
-        LOGGER.log(Level.INFO, "Initializing client... with ExampleMod!")
+        LOGGER.log(Level.INFO, "Initializing client... with newagealexscaves!")
         MOD_BUS.addListener(::registerKeybindings)
     }
 

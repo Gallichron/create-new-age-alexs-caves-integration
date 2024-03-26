@@ -1,9 +1,9 @@
 @file:Suppress("HasPlatformType", "unused")
 
-package com.pleahmacaka.examplemod.init
+package com.gallichron.newagealexscaves.init
 
-import com.pleahmacaka.examplemod.MODID
-import com.pleahmacaka.examplemod.items.SadObsidianMaker
+import com.gallichron.newagealexscaves.MODID
+import com.gallichron.newagealexscaves.items.SadObsidianMaker
 import net.minecraft.world.item.Item
 import net.minecraftforge.eventbus.api.IEventBus
 import net.minecraftforge.registries.DeferredRegister

@@ -1,9 +1,9 @@
 @file:Suppress("HasPlatformType", "unused")
 
-package com.pleahmacaka.examplemod.init
+package com.gallichron.newagealexscaves.init
 
-import com.pleahmacaka.examplemod.MODID
-import com.pleahmacaka.examplemod.blocks.ExampleBlock
+import com.gallichron.newagealexscaves.MODID
+import com.gallichron.newagealexscaves.blocks.ExampleBlock
 import net.minecraft.world.level.block.Block
 import net.minecraftforge.eventbus.api.IEventBus
 import net.minecraftforge.registries.DeferredRegister

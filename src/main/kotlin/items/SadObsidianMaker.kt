@@ -1,4 +1,4 @@
-package com.pleahmacaka.examplemod.items
+package com.gallichron.newagealexscaves.items
 
 import net.minecraft.core.particles.ParticleTypes
 import net.minecraft.server.level.ServerLevel

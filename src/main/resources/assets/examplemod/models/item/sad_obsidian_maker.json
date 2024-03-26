@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/handheld",
   "textures": {
-    "layer0": "examplemod:item/sad_obsidian_maker"
+    "layer0": "newagealexscaves:item/sad_obsidian_maker"
   }
 }

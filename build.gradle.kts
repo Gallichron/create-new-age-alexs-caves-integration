@@ -26,14 +26,16 @@ plugins {
     id("org.jetbrains.kotlin.plugin.serialization") version "1.8.22"
 }
 
-group = "com.pleahmacaka"
-version = "1.20-0.1.0"
+group = "com.gallichron"
+val specificationVersion = "0.1.0"
 
-val modid = "examplemod"
-val vendor = "pleahmacaka"
+val modid = "newagealexscaves"
+val vendor = "gallichron"
 
-val minecraftVersion = "1.20.2"
-val forgeVersion = "48.0.20"
+val minecraftVersion = "1.20.1"
+val forgeVersion = "47.2.21"
+
+version = "$minecraftVersion-$specificationVersion"
 
 java.toolchain.languageVersion.set(JavaLanguageVersion.of(17))
 
@@ -112,8 +114,8 @@ val Project.mixin: MixinExtension
     get() = extensions.getByType()
 
 mixin.run {
-    add(sourceSets.main.get(), "examplemod.mixins.refmap.json")
-    config("examplemod.mixins.json")
+    add(sourceSets.main.get(), "newagealexscaves.mixins.refmap.json")
+    config("newagealexscaves.mixins.json")
     val debug = this.debug as DynamicProperties
     debug.setProperty("verbose", true)
     debug.setProperty("export", true)
@@ -127,7 +129,7 @@ tasks.withType<Jar> {
             mapOf(
                 "Specification-Title" to modid,
                 "Specification-Vendor" to vendor,
-                "Specification-Version" to "1",
+                "Specification-Version" to specificationVersion,
                 "Implementation-Title" to project.name,
                 "Implementation-Version" to project.version.toString(),
                 "Implementation-Vendor" to vendor,

@@ -1,8 +1,8 @@
-package com.pleahmacaka.examplemod.creativetabs
+package com.gallichron.newagealexscaves.creativetabs
 
-import com.pleahmacaka.examplemod.MODID
-import com.pleahmacaka.examplemod.blocks.ExampleBlock
-import com.pleahmacaka.examplemod.items.SadObsidianMaker
+import com.gallichron.newagealexscaves.MODID
+import com.gallichron.newagealexscaves.blocks.ExampleBlock
+import com.gallichron.newagealexscaves.items.SadObsidianMaker
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.world.item.ItemStack
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent

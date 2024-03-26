@@ -1,3 +1,20 @@
+# Create: New Age / Alex's Caves Integration
+Integrates similarly-themed features from Create: New Age and Alex's Caves so that they make more sense when used together.
+
+## Features
+None yet, still in development.
+
+### Planned Features
+- New Age's nuclear reactor produces the radiation effect from Alex's Caves.
+- Reactor blocks also shield from radiation.
+- Ability to use materials found in radioactive caves as reactor fuel.
+- Ability to use materials found in magnetic caves for power generation.
+- Alternate recipes that modify the New Age tech tree to rely more on Alex's Caves
+
+---
+
+Below is the original template's readme. 
+
 # 🪵 Minecraft Forge ⚒ Kotlin Template 💜
 
 ## 🌟 1.20.2 Support 🌟
