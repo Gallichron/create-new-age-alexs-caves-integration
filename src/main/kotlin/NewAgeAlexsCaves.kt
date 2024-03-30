@@ -1,6 +1,7 @@
 package com.gallichron.newagealexscaves
 
 import com.gallichron.newagealexscaves.config.NewAgeAlexsCavesConfig
+import com.gallichron.newagealexscaves.server.item.NewAgeAlexsCavesItemRegistry
 import net.minecraftforge.fml.ModLoadingContext
 import net.minecraftforge.fml.common.Mod
 import net.minecraftforge.fml.config.ModConfig
@@ -21,11 +22,12 @@ object NewAgeAlexsCaves {
 
         MOD_BUS.addListener(::onClientSetup)
 
+        NewAgeAlexsCavesItemRegistry.register(MOD_BUS)
+
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, NewAgeAlexsCavesConfig.spec, "newagealexscaves.toml")
     }
 
-    @Suppress("UNUSED_PARAMETER")
-    private fun onClientSetup(event: FMLClientSetupEvent) {
+    private fun onClientSetup(@Suppress("UNUSED_PARAMETER") event: FMLClientSetupEvent) {
         LOGGER.log(Level.INFO, "Initializing client... with newagealexscaves!")
     }
 }

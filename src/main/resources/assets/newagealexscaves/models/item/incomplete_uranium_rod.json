@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "newagealexscaves:item/incomplete_uranium_rod"
+  }
+}

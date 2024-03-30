@@ -1,4 +1,4 @@
-package mixin.bindings;
+package mixin;
 
 import com.gallichron.newagealexscaves.mixinkt.NuclearUtilMixinKt;
 import net.minecraft.world.entity.LivingEntity;
@@ -11,7 +11,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(value = NuclearUtil.class, remap = false)
 public class NuclearUtilMixin {
 
-	@SuppressWarnings({"unused"})
 	@Inject(at = @At("HEAD"), method = "irradiate", remap = false, cancellable = true)
 	static private void irradiate(LivingEntity entity, CallbackInfo ci) {
 		NuclearUtilMixinKt.nuclearUtilMixin(entity);

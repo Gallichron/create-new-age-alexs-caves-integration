@@ -1,0 +1,61 @@
+{
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "item": "alexscaves:block_of_uranium"
+  },
+  "loops": 1,
+  "results": [
+    {
+      "item": "alexscaves:uranium_rod"
+    }
+  ],
+  "sequence": [
+    {
+      "type": "create:pressing",
+      "ingredients": [
+        {
+          "item": "newagealexscaves:incomplete_uranium_rod"
+        }
+      ],
+      "results": [
+        {
+          "item": "newagealexscaves:incomplete_uranium_rod"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "newagealexscaves:incomplete_uranium_rod"
+        },
+        [
+          {
+            "tag": "forge:plates/iron"
+          }
+        ]
+      ],
+      "results": [
+        {
+          "item": "newagealexscaves:incomplete_uranium_rod"
+        }
+      ]
+    },
+    {
+      "type": "create:pressing",
+      "ingredients": [
+        {
+          "item": "newagealexscaves:incomplete_uranium_rod"
+        }
+      ],
+      "results": [
+        {
+          "item": "newagealexscaves:incomplete_uranium_rod"
+        }
+      ]
+    }
+  ],
+  "transitionalItem": {
+    "item": "newagealexscaves:incomplete_uranium_rod"
+  }
+}
