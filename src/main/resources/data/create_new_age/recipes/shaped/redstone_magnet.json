@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "minecraft:redstone_block"
+    },
+    "+": {
+      "item": "alexscaves:scarlet_neodymium_ingot"
+    },
+    "-": {
+      "item": "alexscaves:azure_neodymium_ingot"
+    },
+    "I": {
+      "item": "minecraft:iron_ingot"
+    }
+  },
+  "pattern": [
+    "I+I",
+    "-#-",
+    "I+I"
+  ],
+  "result": {
+    "count": 1,
+    "item": "create_new_age:redstone_magnet"
+  },
+  "show_notification": true
+}

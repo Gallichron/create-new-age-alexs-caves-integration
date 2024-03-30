@@ -33,7 +33,7 @@ spotless {
 }
 
 group = "com.gallichron"
-val specificationVersion = "0.1.0"
+val specificationVersion = "1.0.0"
 
 val modid = "newagealexscaves"
 val vendor = "gallichron"

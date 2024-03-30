@@ -7,6 +7,8 @@ Integrates similarly-themed features from Create: New Age and Alex's Caves so th
 - New Age's nuclear reactor can use Uranium rods as fuel, and these will allow it to run 3x longer than thorium.
 - The recipe for uranium rods has been replaced with sequenced crafting similar to the one used for nuclear fuel.
   - An intermediate product-- Incomplete Uranium Rod-- Has been added, and is radioactive in the player's inventory.
+- Replace recipes for redstone and netherite magnets with ones that require resources from the magnetic caves in order
+  to use. (Works best with monkey mode).
 
-### Planned Features
-- Alternative to New Age's "monkey mode" that uses Neodymium to create magnet blocks
+Nothing else is planned for now; I imagine more configurability would be useful, and there's probably more room for
+further integrations down the road, but for the purposes of my personal modpack, the changes here are sufficient.
