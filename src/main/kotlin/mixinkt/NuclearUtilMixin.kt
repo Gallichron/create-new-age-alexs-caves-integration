@@ -9,7 +9,8 @@ import net.minecraft.world.effect.MobEffectInstance
 import net.minecraft.world.entity.LivingEntity
 import net.minecraft.world.entity.player.Player
 
-val radiationChance = NewAgeAlexsCavesConfig.getNewAgeRadiationChance
+val baseRadiationChance = NewAgeAlexsCavesConfig.getNewAgeBaseRadiationChance
+val radiationWorseningChance = NewAgeAlexsCavesConfig.getNewAgeRadiationWorseningChance
 val maxRadiationAmplifier = NewAgeAlexsCavesConfig.getNewAgeMaxRadiationAmplifier
 
 fun nuclearUtilMixin(entity: LivingEntity) {
@@ -18,7 +19,7 @@ fun nuclearUtilMixin(entity: LivingEntity) {
         val hazmatMultiplier = 1F - HazmatArmorItem.getWornAmount(entity) / 4F
         val irradiatedEffect = ACEffectRegistry.IRRADIATED.get()
         val amplifier = entity.getEffect(irradiatedEffect)?.amplifier ?: -1
-        if (level.random.nextFloat() < radiationChance * hazmatMultiplier) {
+        if (level.random.nextFloat() < (if (amplifier >= 0) radiationWorseningChance else baseRadiationChance) * hazmatMultiplier) {
             val effectAmplifier =
                 when {
                     amplifier >= maxRadiationAmplifier -> amplifier
