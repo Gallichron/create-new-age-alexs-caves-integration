@@ -24,6 +24,12 @@ plugins {
     id("net.minecraftforge.gradle") version "[6.0,6.2)"
     id("org.jetbrains.kotlin.jvm") version "1.8.22"
     id("org.jetbrains.kotlin.plugin.serialization") version "1.8.22"
+    id("com.diffplug.spotless") version "6.25.0"
+}
+
+spotless {
+    java { eclipse() }
+    kotlin { ktlint() }
 }
 
 group = "com.gallichron"
@@ -33,7 +39,11 @@ val modid = "newagealexscaves"
 val vendor = "gallichron"
 
 val minecraftVersion = "1.20.1"
-val forgeVersion = "47.2.21"
+val forgeVersion = when(minecraftVersion) {
+    "1.20.1" -> "47.2.1"
+    "1.20.2" -> "48.0.20"
+    else -> throw RuntimeException("'minecraftVersion' must be either 1.20.1 or 1.20.2")
+}
 
 version = "$minecraftVersion-$specificationVersion"
 
@@ -69,7 +79,8 @@ minecraft {
     runs.run {
         create("client") {
             property("log4j.configurationFile", "log4j2.xml")
-            jvmArg("-XX:+AllowEnhancedClassRedefinition")
+            // Below arg causes "Unrecognized VM option 'AllowEnhancedClassRedefinition'".
+            // jvmArg("-XX:+AllowEnhancedClassRedefinition")
             args("--username", "Player")
         }
 
@@ -98,6 +109,12 @@ repositories {
         name = "Kotlin for Forge"
         url = uri("https://thedarkcolour.github.io/KotlinForForge/")
     }
+    maven {
+        url = uri("https://www.cursemaven.com")
+        content {
+            includeGroup("curse.maven")
+        }
+    }
 }
 
 fun getProperty(name: String): String {
@@ -108,6 +125,13 @@ dependencies {
     minecraft("net.minecraftforge:forge:$minecraftVersion-$forgeVersion")
     annotationProcessor("org.spongepowered:mixin:0.8.5:processor")
     implementation("thedarkcolour:kotlinforforge:4.3.0")
+
+    implementation(fg.deobf("curse.maven:alexs-caves-924854:5121949"))
+    implementation(fg.deobf("curse.maven:citadel-331936:5075402"))
+
+    implementation(fg.deobf("curse.maven:botarium-704113:5118353"))
+    implementation(fg.deobf("curse.maven:create-328085:4835191"))
+    implementation(fg.deobf("curse.maven:create-new-age-905861:5080957"))
 }
 
 val Project.mixin: MixinExtension
@@ -160,5 +184,18 @@ tasks.withType<JavaCompile>().configureEach {
 tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
     kotlinOptions {
         jvmTarget = "17"
+    }
+}
+
+task("printRuntimeClasspath") {
+    dependsOn("buildNeeded")
+    dependsOn("genIntellijRuns")
+
+    val runtimeClasspath = sourceSets["main"].runtimeClasspath
+    inputs.files( runtimeClasspath )
+    doLast {
+        runtimeClasspath.elements.get().forEach {
+            println(it.asFile.name.toString())
+        }
     }
 }

@@ -1,10 +1,9 @@
 package com.gallichron.newagealexscaves
 
-import com.gallichron.newagealexscaves.init.BlockItemRegistry
-import com.gallichron.newagealexscaves.init.BlockRegistry
-import com.gallichron.newagealexscaves.init.ItemRegistry
-import com.gallichron.newagealexscaves.keybind.KeyBindHandler.registerKeybindings
+import com.gallichron.newagealexscaves.config.NewAgeAlexsCavesConfig
+import net.minecraftforge.fml.ModLoadingContext
 import net.minecraftforge.fml.common.Mod
+import net.minecraftforge.fml.config.ModConfig
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent
 import org.apache.logging.log4j.Level
 import org.apache.logging.log4j.LogManager
@@ -14,8 +13,7 @@ import thedarkcolour.kotlinforforge.forge.MOD_BUS
 const val MODID = "newagealexscaves"
 
 @Mod(MODID)
-object newagealexscaves {
-
+object NewAgeAlexsCaves {
     val LOGGER: Logger = LogManager.getLogger("newagealexscaves")
 
     init {
@@ -23,15 +21,11 @@ object newagealexscaves {
 
         MOD_BUS.addListener(::onClientSetup)
 
-        ItemRegistry.register(MOD_BUS)
-        BlockRegistry.register(MOD_BUS)
-        BlockItemRegistry.register(MOD_BUS)
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, NewAgeAlexsCavesConfig.spec, "newagealexscaves.toml")
     }
 
     @Suppress("UNUSED_PARAMETER")
     private fun onClientSetup(event: FMLClientSetupEvent) {
         LOGGER.log(Level.INFO, "Initializing client... with newagealexscaves!")
-        MOD_BUS.addListener(::registerKeybindings)
     }
-
 }

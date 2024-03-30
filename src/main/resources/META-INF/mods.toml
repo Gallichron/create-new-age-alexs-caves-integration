@@ -25,3 +25,17 @@ mandatory = true
 versionRange = "[1.20,1.21)"
 ordering = "NONE"
 side = "BOTH"
+
+[[dependencies.newagealexscaves]]
+modId="alexscaves"
+mandatory=true
+versionRange="[1.1.0,)"
+ordering="AFTER"
+side="BOTH"
+
+[[dependencies.newagealexscaves]]
+modId="create_new_age"
+mandatory=true
+versionRange="[1.1.2,)"
+ordering="AFTER"
+side="BOTH"

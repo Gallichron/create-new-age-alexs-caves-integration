@@ -3,11 +3,10 @@
   "minVersion": "0.8",
   "package": "mixin",
   "compatibilityLevel": "JAVA_17",
-  "mixins": [],
-  "client": [
-    "ExampleMixin",
-    "bindings.ExampleBindingMixin"
+  "mixins": [
+    "bindings.NuclearUtilMixin"
   ],
+  "client": [],
   "injectors": {
     "defaultRequire": 1
   }
