@@ -27,7 +27,9 @@ object NewAgeAlexsCaves {
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, NewAgeAlexsCavesConfig.spec, "newagealexscaves.toml")
     }
 
-    private fun onClientSetup(@Suppress("UNUSED_PARAMETER") event: FMLClientSetupEvent) {
+    private fun onClientSetup(
+        @Suppress("UNUSED_PARAMETER") event: FMLClientSetupEvent,
+    ) {
         LOGGER.log(Level.INFO, "Initializing client... with newagealexscaves!")
     }
 }
