@@ -2,7 +2,6 @@ package com.gallichron.newagealexscaves.config
 
 import net.minecraftforge.common.ForgeConfigSpec
 
-@Suppress("unused")
 object NewAgeAlexsCavesConfig {
     private val builder = ForgeConfigSpec.Builder()
 
